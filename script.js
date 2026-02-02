@@ -1,3 +1,4 @@
+// Active navbar on scroll
 const sections = document.querySelectorAll("section");
 const navLinks = document.querySelectorAll(".navbar a");
 
@@ -18,3 +19,18 @@ window.addEventListener("scroll", () => {
     }
   });
 });
+
+// ================================
+// Marquee Auto-Clone for Portfolio
+// ================================
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll('.auto-clone').forEach(track => {
+    const items = Array.from(track.children);
+
+    items.forEach(item => {
+      const clone = item.cloneNode(true);
+      track.appendChild(clone);
+    });
+  });
+});
+
