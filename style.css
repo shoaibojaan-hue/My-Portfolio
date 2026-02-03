@@ -1,0 +1,1343 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #05070f, #091035, #1f0130, #01023d);
+  background-size: 400% 400%;
+  animation: gradientBG 25s ease infinite;
+  color: #e5e7eb;
+  font-family: 'Poppins', sans-serif;
+}
+
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Montserrat:wght@900&display=swap');
+
+/* --- Transparent Grainy Glass Header --- */
+.header {
+  position: fixed;
+  top: 20px; 
+  left: 5%;
+  right: 5%;
+  width: 90%;
+  padding: 10px 4%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+  /* Glassmorphism Effect */
+  background: rgba(255, 255, 255, 0.03); 
+  backdrop-filter: blur(15px) saturate(160%);
+  -webkit-backdrop-filter: blur(15px) saturate(160%);
+  
+  /* Grainy Border & Rounded Edges */
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 100px; 
+  
+  z-index: 1000;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* --- Logo Profile Style --- */
+/* --- Logo with Profile Image --- */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+}
+
+.profile-frame {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden; /* Makes the image circular */
+  border: 2px solid rgba(56, 189, 248, 0.5);
+  box-shadow: 0 0 15px rgba(56, 189, 248, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Prevents stretching */
+}
+
+.logo span {
+  font-size: 19px;
+  font-weight: 700;
+  background: linear-gradient(90deg, #38bdf8, #ffffff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: 0.3px;
+}
+
+.logo span {
+  background: linear-gradient(90deg, #38bdf8, #ffffff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: 0.3px;
+}
+
+/* --- Navigation Text Design --- */
+.navbar {
+  display: flex;
+  align-items: center;
+}
+
+.navbar a {
+  color: rgba(255, 255, 255, 0.7); /* Slightly dimmed for minimal look */
+  margin-left: 30px;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: 0.8px; /* Clean spacing */
+  text-transform: capitalize;
+  position: relative; /* Needed for underline animation */
+  transition: color 0.3s ease;
+}
+
+/* Hover & Active Text State */
+.navbar a:hover,
+.navbar a.active {
+  color: #38bdf8;
+  text-shadow: 0 0 10px rgba(56, 189, 248, 0.4);
+}
+
+/* Animated Underline Effect */
+.navbar a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -5px;
+  left: 50%;
+  background: #38bdf8;
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+  border-radius: 2px;
+}
+
+.navbar a:hover::after,
+.navbar a.active::after {
+  width: 20px; /* Small centered line */
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .header {
+    width: 95%;
+    left: 2.5%;
+    padding: 10px 5%;
+  }
+  .navbar a {
+    margin-left: 15px;
+    font-size: 0.8rem;
+    letter-spacing: 0.5px;
+  }
+}
+
+
+
+
+
+
+
+/* Hero */
+.hero {
+  min-height: 100vh;
+  padding: 120px 10% 0;
+  display: flex;
+  align-items: center;
+  gap: 60px;
+}
+
+.hero-content h1 {
+  font-size: 52px;
+  font-weight: 800;
+}
+
+.hero-content h3 {
+  color: #38bdf8;
+  margin: 15px 0;
+}
+
+.hero-content p {
+  max-width: 600px;
+  line-height: 1.7;
+  color: #cbd5f5;
+}
+
+.hero-image img {
+  width: 440px;
+  border-radius: 0%;
+  border: 0px solid #38bdf8;
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  margin-top: 25px;
+  margin-right: 10px;
+  padding: 12px 30px;
+  background: #38bdf8;
+  color: #020617;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.btn-outline {
+  display: inline-block;
+  margin-top: 25px;
+  padding: 12px 30px;
+  border: 2px solid #38bdf8;
+  color: #38bdf8;
+  border-radius: 30px;
+  text-decoration: none;
+}
+
+/* Sections */
+.services,
+.portfolio,
+.experience,
+.contact,
+.results {
+  padding: 100px 10%;
+}
+
+h2 {
+  font-size: 38px;
+  color: #38bdf8;
+  margin-bottom: 40px;
+}
+
+.section-subtitle {
+  margin-bottom: 30px;
+  color: #cbd5f5;
+}
+
+
+
+
+
+
+/* Services */
+
+/* --- High-End "What I Offer" Section --- */
+.services {
+  padding: 100px 10%;
+  text-align: center;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-top: 20px;
+}
+
+.service-card {
+  background: rgba(255, 255, 255, 0.02); /* Very subtle glass */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 40px 30px;
+  border-radius: 25px;
+  /* Grainy Glass Border */
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  text-align: center;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle Hover Effect */
+.service-card:hover {
+  transform: translateY(-12px);
+  background: rgba(56, 189, 248, 0.05); /* Glows with your blue */
+  border-color: rgba(56, 189, 248, 0.4);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* Floating Icon Design */
+.service-icon {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  display: inline-block;
+  transition: transform 0.4s ease;
+}
+
+.service-card:hover .service-icon {
+  transform: scale(1.2) rotate(5deg);
+}
+
+.service-card h3 {
+  margin-bottom: 15px;
+  font-size: 1.4rem;
+  color: #fff;
+  letter-spacing: 0.5px;
+}
+
+.service-card p {
+  color: #9ca3af;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+/* Bottom Accent Line on Hover */
+.service-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #38bdf8, #8b5cf6);
+  transition: width 0.4s ease;
+}
+
+.service-card:hover::after {
+  width: 100%;
+}
+
+
+
+
+                                              /* Portfolio */
+
+
+
+                                              
+
+/* --- Portfolio Container --- */
+.portfolio {
+  padding: 80px 0;
+  overflow: hidden;
+}
+
+/* THE EDGE SHADOW EFFECT */
+.portfolio-showcase {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  /* Fades thumbnails into shadow at the left and right edges */
+  -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+  mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+}
+
+.marquee {
+  overflow: hidden;
+  width: 100%;
+}
+
+.marquee-track {
+  display: flex;
+  gap: 25px;
+  width: max-content;
+  /* Smooth linear animation */
+  animation: scroll-left 40s linear infinite;
+}
+
+/* Reverse row logic */
+.marquee.reverse .marquee-track {
+  animation-direction: reverse;
+}
+
+.marquee-track img {
+  width: 320px; /* Fixed size as requested */
+  height: 180px;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 2px solid #1e293b;
+  transition: transform 0.3s ease;
+}
+
+.marquee-track img:hover {
+  transform: scale(1.05);
+  border-color: #38bdf8;
+  cursor: pointer;
+}
+
+/* Pause on hover */
+.marquee:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+/* KEY FOR INFINITE LOOP */
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    /* Moves exactly half the width of the doubled track */
+    transform: translateX(-50%);
+  }
+}
+
+
+
+
+
+
+
+
+
+                                         /* A/B Testing Section */
+.ab-testing {
+  padding: 90px 6%;
+  margin-top: 40px;
+  margin-bottom: 50px;
+
+}
+
+.ab-testing h2 {
+  text-align: center;
+  font-size: 2.4rem;
+  margin-bottom: 10px;
+  background: linear-gradient(90deg, #38bdf8, #8b5cf6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.ab-testing .section-subtitle {
+  text-align: center;
+  color: #9ca3af;
+  margin-bottom: 50px;
+  margin-top: 30px;
+}
+
+/* Grid */
+.ab-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 35px;
+}
+
+/* Cards */
+.ab-card {
+  background: rgba(10, 15, 44, 0.6);
+  border: 1px solid rgba(56, 189, 248, 0.15);
+  border-radius: 18px;
+  padding: 18px;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+  transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+}
+
+.ab-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 30px 70px rgba(56,189,248,0.15);
+  border-color: rgba(139,92,246,0.5);
+}
+
+/* Images */
+.ab-card img {
+  width: 100%;
+  border-radius: 14px;
+  margin-bottom: 15px;
+  border: 2px solid #1e293b;
+}
+
+/* Text */
+.ab-card h3 {
+  color: #e5e7eb;
+  margin-bottom: 6px;
+}
+
+.ab-card p {
+  color: #9ca3af;
+  font-size: 0.95rem;
+}
+
+/* Mobile */
+@media (max-width: 900px) {
+  .ab-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+
+
+
+/* mobile readibility */
+
+.section-subtitle {
+  text-align: center;
+  margin-top: -40px;
+}
+.mobile-readability{
+  text-align: center;
+  margin-bottom: -100px;
+  
+}
+
+/* Flex container as before */
+.readability-flex {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 180px;
+  flex-wrap: wrap;
+}
+
+/* Laptop and Mobile Containers */
+.laptop-container,
+.mobile-container {
+  position: relative;
+  display: inline-block;
+}
+
+/* Keep original laptop size + shadow + hover */
+.laptop-container img[src*="laptop.png"] {
+  width: 100%;
+  max-width: 700px; /* original size */
+  border-radius: 20px;
+  box-shadow:
+    0 40px 90px rgba(0,0,0,0.65),
+    0 10px 30px rgba(56,189,248,0.08);
+  transition:
+    transform 0.45s cubic-bezier(0.22,1,0.36,1),
+    box-shadow 0.45s ease,
+    filter 0.45s ease;
+}
+
+.laptop-container img[src*="laptop.png"]:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow:
+    0 60px 120px rgba(0,0,0,0.75),
+    0 20px 50px rgba(56,189,248,0.18);
+  filter: brightness(1.05);
+}
+
+/* Mobile original size + shadow + hover */
+.mobile-container img[src*="mobile.png"] {
+  margin-top: 10px;
+  width: 100%;
+  max-width: 280px; /* original smaller size */
+  border-radius: 18px;
+  box-shadow:
+    0 25px 55px rgba(0,0,0,0.55),
+    0 6px 18px rgba(139,92,246,0.12);
+  transition:
+    transform 0.45s cubic-bezier(0.22,1,0.36,1),
+    box-shadow 0.45s ease,
+    filter 0.45s ease;
+}
+
+.mobile-container img[src*="mobile.png"]:hover {
+
+  transform: translateY(-8px) scale(1.04);
+  box-shadow:
+    0 45px 90px rgba(0,0,0,0.7),
+    0 18px 40px rgba(139,92,246,0.25);
+  filter: brightness(1.06);
+}
+
+/* Photoshop icon on laptop – proportional size */
+.icon-laptop {
+  position: absolute;
+  top: -220px;
+  right: 520px;
+  width: 250px;  /* proportional */
+  height: 250px;
+  z-index: 10;
+  transition: transform 0.35s ease;
+}
+
+.icon-laptop:hover {
+  transform: scale(1.15) rotate(-5deg);
+}
+
+/* YouTube icon on mobile – proportional size */
+.icon-mobile {
+  position: absolute;
+  bottom: 0px;
+  top: -215px;
+  right: -30px;
+  width: 250px; /* proportional */
+  height: 250px;
+  z-index: 10;
+  transition: transform 0.35s ease;
+}
+
+.icon-mobile:hover {
+  transform: scale(1.15) rotate(5deg);
+}
+
+/* Responsive stack */
+@media (max-width: 900px) {
+  .readability-flex {
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+  }
+
+  .icon-laptop {
+    width: 40px;
+    height: 40px;
+    top: 5px;
+    right: 5px;
+  }
+
+  .icon-mobile {
+    width: 30px;
+    height: 30px;
+    bottom: 5px;
+    right: 5px;
+  }
+}
+
+
+
+/* Results */
+/* --- Results Section Styling --- */
+.results-container {
+  max-width: 1200px;
+  margin: 50px auto 0;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+/* Restoring the Grainy Glass Effect for all cards */
+.result-card {
+  background: rgba(255, 255, 255, 0.03) !important; /* Semi-transparent */
+  backdrop-filter: blur(15px) saturate(160%) !important; /* Grainy blur */
+  -webkit-backdrop-filter: blur(15px) saturate(160%);
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-radius: 25px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s ease;
+}
+
+/* --- Hero Top Section (The Image) --- */
+.retouch-hero {
+  padding: 40px !important; /* Increased padding so image doesn't touch edges */
+  text-align: center;
+}
+
+.thumbnail-frame-large {
+  width: 100%;
+  max-width: 1000px; /* Constrains image width inside the container */
+  margin: 0 auto 25px;
+  aspect-ratio: 1920 / 1066; /* Your exact image ratio */
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid rgba(56, 189, 248, 0.2);
+  position: relative;
+  background: rgba(0, 0, 0, 0.2); /* Subtle dark base for the image */
+}
+
+.thumbnail-frame-large img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Keeps whole image visible without cropping */
+  transition: transform 0.8s ease;
+}
+
+/* --- The "High-End Retouching" Tag --- */
+.comparison-tag {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  background: rgba(56, 189, 248, 0.85); /* Your signature blue */
+  backdrop-filter: blur(5px);
+  color: #000;
+  padding: 6px 14px;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  z-index: 10;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* --- Bottom Stats Row --- */
+.results-row-bottom {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+.stat-card {
+  padding: 40px 20px;
+}
+
+.glow-number {
+  font-size: 2.6rem;
+  font-weight: 800;
+  color: #fff;
+  text-shadow: 0 0 15px rgba(56, 189, 248, 0.6); /* Restores the neon glow */
+  margin-bottom: 12px;
+}
+
+.result-info-hero h3 {
+  font-size: 1.8rem;
+  background: linear-gradient(90deg, #38bdf8, #fff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 10px;
+}
+
+/* --- Hover Effects for Results Section --- */
+
+/* Main Card Hover: Lift and Glow */
+.result-card:hover {
+  transform: translateY(-12px) scale(1.02); /* Lifts the card up slightly */
+  border-color: rgba(56, 189, 248, 0.5) !important; /* Brightens the blue border */
+  background: rgba(255, 255, 255, 0.06) !important; /* Lightens the glass background */
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 0 0 20px rgba(56, 189, 248, 0.2); /* Adds a deep shadow and blue glow */
+}
+
+/* Image Hover: Smooth Zoom */
+.thumbnail-frame-large:hover img {
+  transform: scale(1.05); /* Zooms the retouching image slightly */
+}
+
+/* Stat Card Hover: Intensify Number Glow */
+.stat-card:hover .glow-number {
+  text-shadow: 0 0 25px rgba(56, 189, 248, 0.9); /* Makes the +40% / 2x numbers glow brighter */
+  transform: scale(1.1); /* Slightly enlarges the number */
+  transition: all 0.4s ease;
+}
+
+/* Tag Hover: Slight Pulse */
+.comparison-tag:hover {
+  background: #38bdf8; /* Solidifies the blue color */
+  transform: scale(1.05);
+  transition: 0.3s ease;
+}
+
+
+
+/* Mobile Responsive */
+@media (max-width: 850px) {
+  .results-row-bottom {
+    grid-template-columns: 1fr;
+  }
+  .retouch-hero {
+    padding: 20px !important;
+  }
+}
+
+
+
+
+                                         /* Experience */
+
+
+/* --- Redesigned Experience Section --- */
+.experience {
+  padding: 80px 10%;
+  text-align: center;
+}
+
+.experience-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2x2 Grid */
+  gap: 30px;
+  max-width: 1100px;
+  margin: 40px auto 0;
+}
+
+/* Glass Card Design */
+.experience-card {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(56, 189, 248, 0.1);
+  border-left: 4px solid #38bdf8; /* Your signature blue */
+  padding: 30px;
+  border-radius: 15px;
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  text-align: left;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Icon Animation */
+.exp-icon {
+  font-size: 2.5rem;
+  line-height: 1;
+  transition: transform 0.4s ease;
+}
+
+.exp-content h3 {
+  color: #fff;
+  font-size: 1.3rem;
+  margin-bottom: 5px;
+}
+
+.exp-date {
+  display: inline-block;
+  color: #38bdf8;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+  background: rgba(56, 189, 248, 0.1);
+  padding: 2px 10px;
+  border-radius: 5px;
+}
+
+.exp-content p {
+  color: #9ca3af;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* --- Hover Effects --- */
+.experience-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  background: rgba(255, 255, 255, 0.07);
+  border-color: #38bdf8;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.experience-card:hover .exp-icon {
+  transform: scale(1.3) rotate(-10deg); /* Icon animation */
+}
+
+/* Mobile Responsive */
+@media (max-width: 850px) {
+  .experience-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .experience-card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+
+
+
+/* --- pricing --- */
+
+/* --- Professional Rate Card Section --- */
+.pricing {
+  padding: 100px 10%;
+  background: radial-gradient(circle at bottom, rgba(56, 189, 248, 0.03) 0%, transparent 50%);
+}
+
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 40px;
+  margin-top: 60px;
+  
+}
+
+.rate-card {
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 0px; /* Sharp corners for a more "Architectural/Pro" look */
+  padding: 40px;
+  transition: all 0.5s ease;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+}
+
+.rate-card {
+  /* This creates the smooth rounded edges */
+  border-radius: 20px; 
+  
+  /* Required so the blue accent line doesn't poke out of the corners */
+  overflow: hidden; 
+  
+  /* Keep your existing properties below */
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Subtle Blue Accent Line */
+.rate-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3px;
+  height: 0;
+  background: #38bdf8;
+  transition: height 0.4s ease;
+}
+
+.rate-card:hover::before {
+  height: 100%;
+}
+
+.rate-card:hover {
+  background: rgba(255, 255, 255, 0.04);
+  transform: translateX(10px); /* Slides right instead of lifting up */
+  border-color: rgba(56, 189, 248, 0.3);
+}
+
+.category {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  color: #38bdf8;
+  letter-spacing: 3px;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.rate-card h3 {
+  font-size: 1.5rem;
+  color: #fff;
+  margin-bottom: 5px;
+}
+
+.rate-amount {
+  font-size: 3.5rem;
+  font-weight: 200; /* Thin font for a high-end feel */
+  color: #fff;
+  margin: 20px 0;
+}
+
+.rate-body p {
+  font-size: 0.9rem;
+  color: #9ca3af;
+  line-height: 1.6;
+  margin-bottom: 25px;
+}
+
+.feature-list {
+  list-style: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 20px;
+}
+
+.feature-list li {
+  font-size: 0.85rem;
+  color: #cbd5e1;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+}
+
+.feature-list li::before {
+  content: "—"; /* Minimalist dash instead of checkmark */
+  margin-right: 10px;
+  color: #38bdf8;
+}
+
+.pricing-footer {
+  margin-top: 60px;
+  color: #9ca3af;
+}
+
+.pricing-footer a {
+  color: #fff;
+  text-decoration: underline;
+  text-underline-offset: 5px;
+}
+
+
+
+
+
+
+
+            /* --- Stunning Contact Section with Icon Animations --- */
+
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap');
+
+.contact {
+  padding: 80px 10%;
+  text-align: center;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2x2 Layout */
+  gap: 20px;
+  max-width: 850px;
+  margin: 40px auto;
+}
+
+/* Base Card Style */
+.contact-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 25px;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  text-decoration: none;
+  backdrop-filter: blur(10px);
+  /* This transition handles the card movement */
+  transition: transform 0.3s ease, background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Icon Container & Base Icon Style */
+.card-icon {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.2rem;
+  color: #fff;
+  /* CRITICAL: This allows the icon inside to animate */
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), color 0.3s ease;
+}
+
+/* Fiverr 'f' specific font */
+.fiverr-letter {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 900;
+  font-size: 2.8rem;
+  color: #1dbf73;
+  text-transform: lowercase;
+  line-height: 1;
+}
+
+.card-content { text-align: left; }
+.card-content span { display: block; font-size: 0.75rem; color: #9ca3af; text-transform: uppercase; }
+.card-content strong { font-size: 1.3rem; color: #fff; }
+
+/* --- HOVER ANIMATIONS --- */
+
+.contact-card:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* This targets the icon/letter when the card is hovered */
+.contact-card:hover .card-icon {
+  transform: scale(1.2) rotate(-10deg); /* Icon pops and tilts */
+}
+
+/* Specific Brand Hover States */
+.contact-card.fiverr:hover { 
+  border-color: #1dbf73; 
+  box-shadow: 0 10px 25px rgba(29, 191, 115, 0.2); 
+}
+.contact-card.fiverr:hover .fiverr-letter {
+  text-shadow: 0 0 15px rgba(29, 191, 115, 0.6);
+}
+
+.contact-card.upwork:hover { 
+  border-color: #14a800; 
+  box-shadow: 0 10px 25px rgba(20, 168, 0, 0.2); 
+}
+.contact-card.upwork:hover .card-icon { color: #14a800; }
+
+.contact-card.whatsapp:hover { 
+  border-color: #25d366; 
+  box-shadow: 0 10px 25px rgba(37, 211, 102, 0.2); 
+}
+.contact-card.whatsapp:hover .card-icon { color: #25d366; }
+
+.contact-card.email:hover { 
+  border-color: #00f2fe; 
+  box-shadow: 0 10px 25px rgba(0, 242, 254, 0.2); 
+}
+.contact-card.email:hover .card-icon { color: #00f2fe; }
+
+/* Mobile View: Stack them in 1 column */
+@media (max-width: 768px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+    padding: 0 20px;
+  }
+}
+
+
+/* --- Inspiring & Minimal Headings --- */
+
+/* Main Hero Heading */
+h1 {
+  font-size: 64px;
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -1.5px; /* Tight tracking for modern look */
+  margin-bottom: 20px;
+  background: linear-gradient(135deg, #fff 60%, #38bdf8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 5px 15px rgba(0,0,0,0.3));
+}
+
+/* Section Headings (Services, Work, Experience, etc.) */
+h2 {
+  font-size: 42px;
+  font-weight: 700;
+  text-align: center;
+  text-transform: uppercase; /* Minimalist clean look */
+  letter-spacing: 4px;      /* Airy, premium spacing */
+  color: #38bdf8;
+  margin-bottom: 50px;
+  position: relative;
+  display: block;
+}
+
+/* Subtle Underline Decoration for h2 */
+h2::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: #38bdf8;
+  margin: 15px auto 0;
+  border-radius: 10px;
+  opacity: 0.6;
+}
+
+/* Sub-titles and Secondary Headings */
+h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: #f3f4f6;
+}
+
+.section-subtitle {
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: 300;
+  letter-spacing: 1.2px;
+  color: #9ca3af;
+  margin-top: -30px; /* Pull closer to the h2 */
+  margin-bottom: 60px;
+  text-transform: italic;
+}
+
+/* Special Case: A/B Testing Gradient Heading */
+.ab-testing h2 {
+  background: linear-gradient(90deg, #38bdf8, #8b5cf6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: 6px; /* Extra spacing for "inspiring" feel */
+}
+
+/* Responsive Headings */
+@media (max-width: 768px) {
+  h1 { font-size: 42px; letter-spacing: -1px; }
+  h2 { font-size: 32px; letter-spacing: 2px; }
+}
+
+
+
+
+
+
+
+                     /* Mobile responsive navbar */
+
+  /* --- Navbar & Mobile Sidebar --- */
+.menu-icon {
+  display: none; /* Hidden on desktop */
+  cursor: pointer;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.bar {
+  width: 25px;
+  height: 3px;
+  background-color: #38bdf8;
+  border-radius: 5px;
+}
+
+@media (max-width: 768px) {
+  .menu-icon { 
+    display: flex; 
+    z-index: 1001;
+  }
+
+  .navbar {
+    position: fixed;
+    top: 100px; 
+    right: -100%; /* Hidden off-screen */
+    width: 250px;
+    height: auto;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    
+    /* Grainy Blurred Transparent Popup */
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 30px;
+    
+    transition: 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7);
+  }
+
+  .navbar.active {
+    right: 5%; /* Slides in from the right */
+  }
+
+  .navbar a {
+    margin: 0;
+    font-size: 1.2rem;
+    text-align: center;
+    width: 100%;
+  }
+}              
+@media (max-width: 768px) {
+  .navbar {
+    position: fixed;
+    top: 100px; 
+    right: -100%; 
+    width: 260px;
+    height: auto;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    
+    /* MATCHING NAVBAR GLASSMORPHISM */
+    background: rgba(255, 255, 255, 0.05); /* Increased slightly for better grain */
+    backdrop-filter: blur(15px) saturate(160%); /* Same values as .header */
+    -webkit-backdrop-filter: blur(15px) saturate(160%);
+    
+    /* Premium Border & Rounded Edges */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 30px;
+    
+    /* Smooth Pop-in Animation */
+    transition: 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7);
+    z-index: 999;
+  }
+
+  .navbar.active {
+    right: 5%; /* Separated from edge as requested */
+  }
+
+  /* Styling links inside the sidebar */
+  .navbar a {
+    margin: 0;
+    font-size: 1.2rem;
+    text-align: center;
+    width: 100%;
+    color: #fff; /* Ensuring text is bright against blur */
+  }
+}
+/* Animation for Hamburger Icon */
+#menu-icon.active .bar:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+#menu-icon.active .bar:nth-child(2) {
+  opacity: 0;
+}
+#menu-icon.active .bar:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+
+
+
+
+/* --- COMPREHENSIVE MOBILE RESPONSIVENESS --- */
+
+@media (max-width: 768px) {
+  /* 1. HERO SECTION: Stacking and Alignment */
+  .hero {
+    flex-direction: column-reverse; /* Put text above image or vice-versa */
+    padding: 120px 5% 40px;
+    text-align: center;
+    gap: 30px;
+    min-height: auto;
+  }
+
+  .hero-content h1 {
+    font-size: 36px; /* Scaled down for mobile screens */
+    line-height: 1.2;
+  }
+
+  .hero-image img {
+    width: 280px; /* Prevents image from being too large on phones */
+    margin: 0 auto;
+  }
+
+  /* 2. PORTFOLIO: Adjusting Thumbnail Sizes */
+  .marquee-track img {
+    width: 240px; /* Smaller thumbnails for better mobile performance */
+    height: 135px;
+  }
+
+  .portfolio-showcase {
+    gap: 15px;
+    /* Reduce mask intensity so more images are visible on narrow screens */
+    -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  }
+
+  /* 3. MOBILE READABILITY: Fix Overlapping Icons */
+  .readability-flex {
+    flex-direction: column;
+    gap: 80px; /* Spacing between laptop and mobile mockups */
+    padding-top: 100px;
+  }
+
+  .laptop-container img[src*="laptop.png"] {
+    max-width: 90%; /* Fit within phone width */
+  }
+
+  .icon-laptop {
+    width: 100px; /* Scale down Photoshop icon */
+    height: 100px;
+    top: -80px;
+    right: 10px;
+  }
+
+  .icon-mobile {
+    width: 100px; /* Scale down YouTube icon */
+    height: 100px;
+    top: -80px;
+    right: -10px;
+  }
+
+  /* 4. GENERAL SECTION SPACING */
+  .services, .portfolio, .experience, .contact, .results {
+    padding: 60px 5%;
+  }
+
+  h2 {
+    font-size: 28px; /* Standardize section headings for mobile */
+    letter-spacing: 2px;
+  }
+}
+
+/* 5. EXTRA SMALL DEVICES (Phones under 400px) */
+@media (max-width: 400px) {
+  .hero-content h1 {
+    font-size: 30px;
+  }
+  
+  .btn, .btn-outline {
+    width: 100%; /* Make buttons full-width for easier tapping */
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+}
