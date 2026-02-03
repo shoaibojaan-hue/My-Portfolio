@@ -62,21 +62,21 @@ body {
 }
 
 .profile-frame {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  overflow: hidden; /* Makes the image circular */
-  border: 2px solid rgba(56, 189, 248, 0.5);
-  box-shadow: 0 0 15px rgba(56, 189, 248, 0.3);
+  width: 45px;         /* Set your desired size */
+  height: 45px;
+  border-radius: 50%;   /* This makes it a perfect circle */
+  overflow: hidden;     /* This cuts off the corners of the image */
+  border: 2px solid #38bdf8; /* Optional: adds a nice glowing rim */
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 15px rgba(56, 189, 248, 0.3); /* Matches your site lighting */
 }
 
 .profile-frame img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Prevents stretching */
+  object-fit: cover;    /* Important: prevents your face from looking squashed */
 }
 
 .logo span {
