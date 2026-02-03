@@ -1329,6 +1329,27 @@ h3 {
   }
 }
 
+
+.comparison-tag {
+  font-size: 10px;
+  font-weight: 700;
+  color: #000;
+  background: #38bdf8;
+  padding: 2px 8px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  display: inline-block;
+  line-height: 1;
+
+  /* ADD THIS LINE to make the whole tag look small and sleek */
+  transform: scale(0.7);
+  transform-origin: left center; /* Keeps it aligned to the text next to it */
+  margin-right: -10px; /* Adjusts spacing because scaling leaves empty gap */
+}
+
+
+
 /* 5. EXTRA SMALL DEVICES (Phones under 400px) */
 @media (max-width: 400px) {
   .hero-content h1 {
